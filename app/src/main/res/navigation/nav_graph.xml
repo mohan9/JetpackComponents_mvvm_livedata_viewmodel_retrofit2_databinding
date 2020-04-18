@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.mohan.cinta.MainActivity"
+        android:label="main_activity"
+        tools:layout="@layout/main_activity" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mohan.cinta.ui.main.name.NameFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_mobileFragment"
+            app:destination="@id/mobileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="fullName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.mohan.cinta.ui.main.email.EmailFragment"
+        android:label="EmailFragment">
+        <action
+            android:id="@+id/action_emailFragment_to_messageFragment"
+            app:destination="@id/messageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="fullName"
+            app:argType="string" />
+        <argument
+            android:name="mobileno"
+            app:argType="string" />
+        <argument
+            android:name="emailid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mobileFragment"
+        android:name="com.mohan.cinta.ui.main.mobile.MobileFragment"
+        android:label="MobileFragment">
+        <action
+            android:id="@+id/action_mobileFragment_to_emailFragment"
+            app:destination="@id/emailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="fullName"
+            app:argType="string" />
+        <argument
+            android:name="mobileno"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.mohan.cinta.ui.main.message.MessageFragment"
+        android:label="MessageFragment">
+        <action
+            android:id="@+id/action_messageFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

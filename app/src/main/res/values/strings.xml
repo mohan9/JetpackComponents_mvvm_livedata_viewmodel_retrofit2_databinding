@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Cinta</string>
+    <string name="fullname">FullName</string>
+    <string name="next">NEXT</string>
+    <string name="ok">OK</string>
+    <string name="mobile_no">Mobile No.</string>
+    <string name="email_id">Email Id</string>
+    <string name="message">Message</string>
+    <string name="save">SAVE</string>
+</resources>
